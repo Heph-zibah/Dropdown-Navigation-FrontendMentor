@@ -11,14 +11,21 @@ body {
 }
 
 a {
-    color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 41%);
 }
+
+a:hover {
+    color: #000;
+}
+
+
+/* HEADER: Company logo, navigation, and buttons -START*/
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 30px 40px;
 }
 
 header .left-page {
@@ -27,11 +34,11 @@ header .left-page {
 
 header .left-page nav ul {
     display: flex;
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 header .left-page nav ul li {
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 header .right-page {
@@ -52,19 +59,26 @@ header .right-page .register-btn {
 header .left-page nav,
 header .right-page .buttons {
     display: none;
+    cursor: pointer;
 }
 
-.page-image {
+
+/* HEADER: Company logo, navigation, and buttons  -END*/
+
+
+/* MAIN CONTENT: Main image, page content(h1, paragraph, images, and attribution) -START */
+
+main .page-image {
     background: url("../img/image-hero-mobile.png") no-repeat center center/ contain;
     height: 500px;
 }
 
-.main-page {
+main .main-page {
     display: flex;
     flex-direction: column;
 }
 
-.page-content {
+main .main-page .page-content {
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
@@ -73,62 +87,229 @@ header .right-page .buttons {
     text-align: center
 }
 
-.page-content h1 {
+main .main-page .page-content h1 {
     margin-bottom: 20px;
 }
 
-.page-content p {
+main .main-page .page-content p {
     padding: 0 9px;
     line-height: 1.6;
 }
 
-.page-content a {
+main .main-page .page-content a {
     background: #000;
     color: #fff;
     border-radius: 10px;
     padding: 10px 15px;
     margin-top: 20px;
+    transition: .5s;
 }
 
-.images {
+main .main-page .page-content a:hover {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+main .main-page .images {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+main .main-page .image {
+    margin: 0 10px;
+}
+
+
+/* ATTRIBUTION */
+
+main .main-page .markup {
+    font-size: 10px;
+    text-align: center;
+}
+
+main .main-page .markup a {
+    color: blue;
+}
+
+main .main-page .markup a:hover {
+    text-decoration: underline;
+}
+
+
+/* MAIN CONTENT: Main image, page content(h1, paragraph, images, and attribution) -END */
+
+
+/* MOBILE HEADER NAVIGATION -START */
+
+.modal {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal .modal-content {
+    background-color: #fff;
+    color: #000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20rem;
+    height: 100vh;
+    box-shadow: 0 .5rem .5rem 0 rgba(0, 0, 0, 0.1), 0 .55rem 1.2rem 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalOpen;
+    animation-duration: 1.5s;
+    padding: 10px;
+}
+
+.modal .modal-content .modal-header {
+    padding: 1rem;
+}
+
+.modal .modal-content .modal-header .closeBtn {
+    float: right;
+}
+
+.modal .modal-content .modal-header .closeBtn:hover,
+.modal .modal-content .modal-header .closeBtn:focus {
+    cursor: pointer;
+}
+
+.modal .modal-content .modal-body {
+    padding: .8rem 1.2rem;
+}
+
+.modal .modal-content .modal-body ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal .modal-content .modal-body nav ul li {
+    margin-top: 20px;
+}
+
+.mobile-features-modal {
+    background-color: #fff;
+    padding: 0px 0 10px 20px;
+    display: none;
+}
+
+.mobile-features-modal li {
+    margin-top: 10px;
+}
+
+.mobile-features-modal li a img {
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+.mobile-company-modal {
+    background-color: #fff;
+    padding: 0px 0 10px 20px;
+    display: none;
+}
+
+.mobile-company-modal li {
+    margin-top: 10px;
+}
+
+.mobile-arrow-up1,
+.mobile-arrow-up2 {
+    display: none;
+}
+
+.modal .modal-content .mobile-buttons .mobile-btns {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.image {
-    margin: 30px 10px;
+.modal .modal-content .mobile-buttons .mobile-btns .mobile-login-btn {
+    margin-top: 30px;
 }
+
+.modal .modal-content .mobile-buttons .mobile-btns .mobile-register-btn {
+    border: 1px solid #000;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* MOBILE HEADER NAVIGATION -END */
+
+
+/* MOBILE */
 
 @media screen and (max-width:375px) {
     header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         padding: 20px 20px;
     }
     header .left-page nav,
     header .right-page .buttons {
         display: none;
     }
-    .menu-bar {
+    header .right-page .menu-bar {
         display: block;
     }
-    .page-image {
+    main .page-image {
         background: url("../img/image-hero-mobile.png") no-repeat center center/ contain;
         height: 300px;
+        margin: 30px 0;
     }
-    .image img {
-        width: 70px;
+    main .main-page .page-content h1 {
+        margin-bottom: 30px;
+    }
+    main .main-page .page-content a {
+        background: #000;
+        color: #fff;
+        border-radius: 10px;
+        padding: 10px 15px;
+        margin: 30px 0;
+        transition: .5s;
+    }
+    main .main-page .images {
+        margin-bottom: 30px;
+        padding: 0;
+    }
+    main .main-page .image img {
+        width: 50px;
+    }
+    .modal .modal-content {
+        width: 15rem;
     }
 }
 
-@media (max-width:1440px) {
+
+/* DESKTOP */
+
+@media (min-width:1090px) {
     header .left-page nav,
     header .right-page .buttons {
         display: block;
     }
-    .menu-bar {
+    header .right-page .menu-bar {
         display: none;
     }
     main {
@@ -136,30 +317,190 @@ header .right-page .buttons {
         flex-direction: row-reverse;
         padding: 30px;
     }
-    .page-image {
+    main .page-image {
         background: url("../img/image-hero-desktop.png") no-repeat center center/ contain;
-        height: 500px;
-        width: 100%;
+        height: 450px;
+        width: 85%;
     }
-    .main-page {
+    main .main-page {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: start;
     }
-    .page-content {
-        padding: 30px 0;
+    main .main-page .page-content {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        text-align: start;
+        padding: 70px 100px 0 90px;
     }
-    .page-content h1 {
-        margin-bottom: 20px;
+    main .main-page .page-content h1 {
+        font-size: 70px;
+        font-weight: 700;
+        margin-bottom: 35px;
+        line-height: 1;
     }
-    .page-content p {
+    main .main-page .page-content a {
+        margin-top: 35px;
+    }
+    main .main-page .images {
+        padding: 40px 70px 20px 60px;
+    }
+    main .main-page .image img {
+        margin: 0 20px;
+    }
+    /* NAV DROPDOWN START */
+    .features {
+        position: relative;
+    }
+    .features-modal {
+        background-color: #fff;
+        padding: 0px 10px 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+        border-radius: 8px;
+        position: absolute;
+        top: 60px;
+        left: 130px;
+        display: none;
+    }
+    .features-modal li {
+        margin-top: 10px;
+    }
+    .features-modal li a img {
+        margin-right: 10px;
+        margin-left: 0;
+    }
+    .company {
+        position: relative;
+    }
+    .company-modal {
+        background-color: #fff;
+        padding: 15px 20px 15px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+        border-radius: 8px;
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 280px;
+    }
+    .company-modal li {
+        margin-top: 10px;
+    }
+    .arrow-up1,
+    .arrow-up2 {
+        display: none;
+    }
+    /* NAV DROPDOWN ENDS */
+}
+
+@media (min-width:1440px) {
+    header {
+        padding: 70px 40px;
+    }
+    header .left-page .logo img {
+        width: 150px;
+    }
+    header .left-page nav,
+    header .right-page .buttons {
+        display: block;
+        font-size: 25px;
+    }
+    header .right-page .menu-bar {
+        display: none;
+    }
+    main {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 30px;
+    }
+    main .page-image {
+        background: url("../img/image-hero-desktop.png") no-repeat center center/ cover;
+        height: 600px;
+        width: 50%;
+    }
+    main .main-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+    }
+    main .main-page .page-content {
+        padding: 80px 100px 0 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: start;
+    }
+    main .main-page .page-content h1 {
+        font-size: 100px;
+        font-weight: 700;
+        margin-bottom: 35px;
+        line-height: 1;
+    }
+    main .main-page .page-content p {
         padding: 0;
-        line-height: 1.6;
+        font-size: 25px;
     }
+    main .main-page .page-content a {
+        margin-top: 35px;
+        font-size: 30px;
+    }
+    main .main-page .images {
+        padding: 40px 0 20px 0;
+    }
+    main .main-page .image {
+        margin: 0 30px;
+    }
+    main .main-page .image img {
+        width: 150px;
+    }
+    /* NAV DROPDOWN START */
+    .features {
+        position: relative;
+    }
+    .features-modal {
+        background-color: #fff;
+        padding: 25px 30px 25px 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+        border-radius: 8px;
+        position: absolute;
+        top: 110px;
+        left: 180px;
+        display: none;
+        transition: .5s;
+    }
+    .features-modal li {
+        margin-top: 10px;
+    }
+    .features-modal li a img {
+        margin-right: 10px;
+        margin-left: 0;
+    }
+    .company {
+        position: relative;
+    }
+    .company-modal {
+        background-color: #fff;
+        padding: 25px 30px 25px 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+        border-radius: 8px;
+        display: none;
+        position: absolute;
+        top: 110px;
+        left: 450px;
+        transition: .5s;
+    }
+    .company-modal li {
+        margin-top: 10px;
+    }
+    .arrow-up1,
+    .arrow-up2 {
+        display: none;
+    }
+    /* NAV DROPDOWN ENDS */
 }
