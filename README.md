@@ -6,15 +6,12 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 
 
@@ -27,16 +24,10 @@ Users should be able to:
 - View the relevant dropdown menus on desktop and mobile when interacting with the navigation links
 - View the optimal layout for the content depending on their device's screen size
 - See hover states for all interactive elements on the page
-
-### Screenshot
-
-![](./screenshot.jpg)
-
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Snap Landing Page Solution URL](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5/hub/intro-section-with-dropdown-navigation-SyGrDfrevc/)
+- Live Site URL: [Snap Landing Page Live Site URL](https://snap-landing-page-frontendmentor.netlify.app/)
 
 ## My process
 
@@ -49,34 +40,48 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+I was able to implement mobile-first workflow
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<header>
+        ...
+    </header>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+@media screen and (max-width:375px) {
+}
+@media (min-width:1090px) {
+}
+@media (min-width:1440px) {
 }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const menuBar = document.querySelector('.menu-bar');
+const modal = document.querySelector('#simpleModal');
+const closeBtn = document.querySelector('.closeBtn')
+
+menuBar.addEventListener('click', () => {
+    console.log(modal);
+    modal.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
 ```
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- Mobile-first workflow
+- CSS custom components
+- Javascript
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
 - Twitter - [@yourusername](https://www.twitter.com/yourusername)
